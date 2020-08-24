@@ -24,6 +24,7 @@ class Submissions(models.Model):
     quesID = models.ForeignKey(Question, on_delete=models.CASCADE)
     userID = models.ForeignKey(User, on_delete=models.CASCADE)
     codeLang = models.CharField(max_length=3, choices=languages)
+    submission = models.FileField(upload_to='./responses', max_length=100)
     # submittedCode = models.FilePathField
     # testResult = models.JSONField() or HStoreField (django.contrib.postgres required) or ArrayField --> TBD
     submissionTime = models.DateTimeField(auto_now=True)
